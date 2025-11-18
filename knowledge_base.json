@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "topic": "rocket engineering books",
+      "content": "1. \"Rocket Propulsion Elements\" by George P. Sutton and Oscar Biblarz - A comprehensive guide on rocket propulsion elements, covering theory and practical applications.\n2. \"Fundamentals of Astrodynamics\" by Roger R. Bate, Donald D. Mueller, and Jerry E. White - This book focuses on the principles of astrodynamics with practical examples and problem sets.\n3. \"Introduction to Rocket Science and Engineering\" by Travis S. Taylor - A beginner-friendly book that introduces key concepts in rocket science and engineering.\n4. \"Spacecraft Systems Engineering\" by Peter Fortescue, Graham Swinerd, and John Stark - A detailed look at spacecraft design and engineering, including rocket systems.\n5. \"Rocket Science for Dummies\" by Mike McKone - An accessible introduction to the principles of rocket science for those new to the field.",
+      "category": "education",
+      "timestamp": "2025-11-13T18:37:28.051317",
+      "last_accessed": "2025-11-13T18:41:37.807632"
+    }
+  ]
+}

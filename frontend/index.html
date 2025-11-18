@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Engine AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(0, 200, 255, 0.3);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header with space background */
+        .header {
+            padding: 20px;
+            text-align: center;
+            background: #000000;
+            border-bottom: 2px solid rgba(0, 200, 255, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Space background layer in header */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(100, 150, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(150, 180, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(80, 120, 200, 0.08) 0%, transparent 60%),
+                #000000;
+            z-index: 0;
+        }
+
+        /* Stars container in header */
+        .header-stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        .star.small {
+            width: 1px;
+            height: 1px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 3px rgba(255, 255, 255, 1),
+                        0 0 6px rgba(255, 255, 255, 0.8),
+                        0 0 10px rgba(200, 220, 255, 0.5);
+        }
+
+        .star.medium {
+            width: 1px;
+            height: 1px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 4px rgba(255, 255, 255, 1),
+                        0 0 8px rgba(200, 220, 255, 1),
+                        0 0 12px rgba(150, 180, 255, 0.7);
+        }
+
+        .star.large {
+            width: 1px;
+            height: 1px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 5px rgba(255, 255, 255, 1),
+                        0 0 10px rgba(200, 230, 255, 1),
+                        0 0 15px rgba(150, 200, 255, 0.9),
+                        0 0 20px rgba(100, 180, 255, 0.6);
+        }
+        
+        .star.bright {
+            width: 1px;
+            height: 1px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 6px rgba(255, 255, 255, 1),
+                        0 0 12px rgba(220, 240, 255, 1),
+                        0 0 18px rgba(180, 220, 255, 0.8),
+                        0 0 25px rgba(150, 200, 255, 0.5);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { 
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-symbol {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 10, 20, 0.9) 0%, rgba(0, 30, 50, 0.6) 100%);
+            padding: 15px;
+            border: 3px solid rgba(0, 200, 255, 0.6);
+            box-shadow: 0 0 40px rgba(0, 200, 255, 0.8),
+                        0 0 80px rgba(0, 200, 255, 0.5),
+                        inset 0 0 30px rgba(0, 200, 255, 0.2);
+            filter: drop-shadow(0 0 30px rgba(0, 200, 255, 0.9)) 
+                    drop-shadow(0 0 60px rgba(0, 200, 255, 0.6));
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1); 
+                filter: drop-shadow(0 0 30px rgba(0, 200, 255, 0.9)) 
+                        drop-shadow(0 0 60px rgba(0, 200, 255, 0.6));
+                border-color: rgba(0, 200, 255, 0.6);
+            }
+            50% { 
+                transform: scale(1.05); 
+                filter: drop-shadow(0 0 40px rgba(0, 200, 255, 1)) 
+                        drop-shadow(0 0 80px rgba(0, 200, 255, 0.8));
+                border-color: rgba(0, 200, 255, 0.9);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #00d4ff, #0080ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tagline {
+            color: #00d4ff;
+            font-size: 0.9em;
+            margin-top: 5px;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Chat container */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 20px;
+            overflow: hidden;
+            border-top: none;
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: transparent;
+            overflow-y: hidden;
+        }
+
+        .messages.has-messages {
+            overflow-y: auto;
+        }
+
+        .messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .messages::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .messages::-webkit-scrollbar-thumb {
+            background: rgba(0, 200, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        .message {
+            display: flex;
+            gap: 15px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .message.user .message-avatar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .message.ai .message-avatar {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+            padding: 5px;
+        }
+
+        .message-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1.2);
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 15px 20px;
+            border-radius: 15px;
+            line-height: 1.6;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-bottom-right-radius: 5px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .message.ai .message-content {
+            background: rgba(0, 200, 255, 0.1);
+            border: 1px solid rgba(0, 200, 255, 0.3);
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 200, 255, 0.2);
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 15px 20px;
+            background: rgba(0, 200, 255, 0.1);
+            border: 1px solid rgba(0, 200, 255, 0.3);
+            border-radius: 15px;
+            width: fit-content;
+        }
+
+        .typing-indicator.active {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #00d4ff;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.7; }
+            30% { transform: translateY(-10px); opacity: 1; }
+        }
+
+        /* Input area */
+        .input-area {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(0, 200, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #userInput {
+            flex: 1;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 200, 255, 0.3);
+            border-radius: 25px;
+            color: #e0e0e0;
+            font-size: 1em;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        #userInput:focus {
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        #sendBtn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #00d4ff, #0080ff);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 200, 255, 0.3);
+        }
+
+        #sendBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 200, 255, 0.5);
+        }
+
+        #sendBtn:active {
+            transform: translateY(0);
+        }
+
+        #sendBtn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Quick actions */
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .quick-btn {
+            padding: 8px 16px;
+            background: rgba(0, 200, 255, 0.1);
+            border: 1px solid rgba(0, 200, 255, 0.3);
+            border-radius: 20px;
+            color: #00d4ff;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .quick-btn:hover {
+            background: rgba(0, 200, 255, 0.2);
+            border-color: #00d4ff;
+            transform: translateY(-2px);
+        }
+
+        .welcome-message {
+            text-align: center;
+            padding: 0px 20px 80px 20px;
+            opacity: 1;
+            position: relative;
+            min-height: 500px;
+            background: transparent;
+            margin: -20px 0 0 0;
+        }
+
+        .welcome-message::before {
+            content: '';
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 900px;
+            height: 85%;
+            background-image: url('symbol2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            opacity: 0.35;
+            z-index: 0;
+            filter: drop-shadow(0 0 60px rgba(0, 200, 255, 0.7)) 
+                    drop-shadow(0 0 100px rgba(0, 200, 255, 0.4));
+        }
+
+        .welcome-message h2 {
+            color: #00d4ff;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 30px rgba(0, 200, 255, 0.8),
+                         0 0 60px rgba(0, 200, 255, 0.4);
+            font-weight: 700;
+        }
+
+        .welcome-message p {
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.15em;
+            color: #e0e0e0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated particles background -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-stars" id="headerStars"></div>
+            <div class="logo-container">
+                <h1>KNOWLEDGE ENGINE</h1>
+                <img class="logo-symbol" src="symbol.png" alt="Knowledge Engine Symbol">
+            </div>
+            <div class="tagline">🧠 Your Intelligent Knowledge Assistant</div>
+        </div>
+
+        <!-- Chat container -->
+        <div class="chat-container">
+            <div class="messages" id="messages">
+                <div class="welcome-message">
+                    <h2>Welcome to Knowledge Engine</h2>
+                    <p>💡 Ask me anything, and I'll search, learn, and remember for you</p>
+                    <p>🔍 Search Wikipedia • 💾 Save Knowledge • 🧮 Calculate • ⏰ Get Time</p>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+
+        <!-- Input area -->
+        <div class="input-area">
+            <div class="quick-actions">
+                <button class="quick-btn" onclick="quickQuery('Tell me about quantum physics')">🔬 Quantum Physics</button>
+                <button class="quick-btn" onclick="quickQuery('Show all my saved knowledge')">📚 My Knowledge</button>
+                <button class="quick-btn" onclick="quickQuery('Calculate sqrt(144)')">🧮 Calculate</button>
+                <button class="quick-btn" onclick="quickQuery('What time is it?')">⏰ Current Time</button>
+            </div>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Ask me anything..." autocomplete="off">
+                <button id="sendBtn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Create stars only in header
+        function createHeaderStars() {
+            const starsContainer = document.getElementById('headerStars');
+            const starCount = 150;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                const sizes = ['small', 'small', 'small', 'small', 'medium', 'medium', 'large', 'bright'];
+                const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+                star.classList.add(randomSize);
+                
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (2 + Math.random() * 3) + 's';
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        createParticles();
+        createHeaderStars();
+
+        const messagesDiv = document.getElementById('messages');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const typingIndicator = document.getElementById('typingIndicator');
+
+        // Symbol for AI responses (using your symbol.png)
+        const aiSymbol = "symbol.png";
+
+        // Add message to chat
+        function addMessage(content, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'ai'}`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            
+            if (isUser) {
+                avatar.innerHTML = '👤';
+                avatar.style.fontSize = '24px';
+            } else {
+                avatar.innerHTML = `<img src="${aiSymbol}" alt="AI">`;
+            }
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.textContent = content;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(contentDiv);
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Remove welcome message if exists
+            const welcome = messagesDiv.querySelector('.welcome-message');
+            if (welcome) {
+                welcome.remove();
+                // Enable scrolling when chat starts
+                messagesDiv.classList.add('has-messages');
+            }
+        }
+
+        // Simulate AI response (replace with actual backend call)
+        async function getAIResponse(query) {
+            // Call your Flask backend
+            try {
+                const response = await fetch('http://localhost:5000/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: query,
+                        session_id: 'user_session_' + Date.now()
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    return data.response;
+                } else {
+                    return "⚠️ Error: " + (data.error || "Something went wrong");
+                }
+            } catch (error) {
+                return "⚠️ Connection Error: Make sure your Flask server is running on http://localhost:5000\n\nStart the server with: python app.py";
+            }
+        }
+
+        // Send message
+        async function sendMessage() {
+            const message = userInput.value.trim();
+            if (!message) return;
+
+            // Add user message
+            addMessage(message, true);
+            userInput.value = '';
+            sendBtn.disabled = true;
+
+            // Show typing indicator
+            typingIndicator.classList.add('active');
+
+            // Get AI response
+            const response = await getAIResponse(message);
+            
+            // Hide typing indicator
+            typingIndicator.classList.remove('active');
+            
+            // Add AI message
+            addMessage(response, false);
+            sendBtn.disabled = false;
+            userInput.focus();
+        }
+
+        // Quick query
+        function quickQuery(query) {
+            userInput.value = query;
+            sendMessage();
+        }
+
+        // Enter key to send
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        // Focus input on load
+        userInput.focus();
+    </script>
+</body>
+</html>
