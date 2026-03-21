@@ -2,11 +2,77 @@
   "entries": [
     {
       "id": 1,
-      "topic": "rocket engineering books",
-      "content": "1. \"Rocket Propulsion Elements\" by George P. Sutton and Oscar Biblarz - A comprehensive guide on rocket propulsion elements, covering theory and practical applications.\n2. \"Fundamentals of Astrodynamics\" by Roger R. Bate, Donald D. Mueller, and Jerry E. White - This book focuses on the principles of astrodynamics with practical examples and problem sets.\n3. \"Introduction to Rocket Science and Engineering\" by Travis S. Taylor - A beginner-friendly book that introduces key concepts in rocket science and engineering.\n4. \"Spacecraft Systems Engineering\" by Peter Fortescue, Graham Swinerd, and John Stark - A detailed look at spacecraft design and engineering, including rocket systems.\n5. \"Rocket Science for Dummies\" by Mike McKone - An accessible introduction to the principles of rocket science for those new to the field.",
+      "topic": "Machine Learning",
+      "content": "ML is a subset of AI that enables computers to learn from data",
+      "category": "technology",
+      "timestamp": "2026-03-13T22:03:05.270846",
+      "last_accessed": "2026-03-13T22:03:11.208727"
+    },
+    {
+      "id": 2,
+      "topic": "AI-powered study buddy app",
+      "content": "expand idea, solve step-by-step, create learning roadmap",
       "category": "education",
-      "timestamp": "2025-11-13T18:37:28.051317",
-      "last_accessed": "2025-11-13T18:41:37.807632"
+      "timestamp": "2026-03-13T22:13:53.634564",
+      "last_accessed": "2026-03-13T22:14:05.350402"
+    },
+    {
+      "id": 3,
+      "topic": "food delivery app",
+      "content": "food delivery app idea expansion framework",
+      "category": "general",
+      "timestamp": "2026-03-13T22:25:57.545394",
+      "last_accessed": "2026-03-13T22:25:58.509211"
+    },
+    {
+      "id": 4,
+      "topic": "Learning Python",
+      "content": "Learning Python is a step-by-step process that involves understanding the basics, practicing coding, creating projects, and joining communities.",
+      "category": "programming",
+      "timestamp": "2026-03-13T22:28:41.469144",
+      "last_accessed": "2026-03-13T22:28:55.137213"
+    },
+    {
+      "id": "29d2dcc5-f5e4-48b7-bc5c-7fe89d7869c6",
+      "topic": "Image Analysis: Analyze this image and answer: what this pic is sh",
+      "content": "The image appears to be a screenshot of a client secrets management page, likely from a cloud-based platform or API management service. \n\nThe page displays information about a client secret, including:\n\n* A warning message indicating that viewing and downloading client secrets is no longer available, and that lost secrets cannot be retrieved.\n* A client secret with a partially hidden value (****QLvD).\n* A creation date and time (17 October 2025 at 23:58:34 GMT+5).\n* A status indicator showing that the client secret is enabled.\n\nOverall, the image suggests that the user is managing client secrets for an application or service, and is being informed about the security and handling of these secrets. \n\nThe main point of this picture is to show the client secret information.",
+      "category": "image_analysis",
+      "timestamp": "2026-03-14T18:07:29.823367"
+    },
+    {
+      "id": "e0c89fad-29d5-4951-9843-ebe32a7a804b",
+      "topic": "Summary: YouTube Video",
+      "content": "YouTube video at: the following: https://youtu.be/xakdjk06miu?si=g3nld6l9o2rytvjx",
+      "category": "summarized_content",
+      "timestamp": "2026-03-14T18:09:42.062219"
+    },
+    {
+      "id": "9ae52030-17b5-4e43-ba65-5830a3120467",
+      "topic": "Image Analysis: Analyze and summarize the content of this image",
+      "content": "**1. Describe what you see in detail**\n\nThe image presents a comprehensive overview of Open-Source Intelligence (OSINT) sources, categorized into six primary sections. Each section is represented by a distinct color and features a unique icon.\n\n*   **Media (Purple)**: This section encompasses television, radio, newspapers, and magazines.\n*   **Internet (Red)**: The Internet section includes search engines like Google, Bing, and Yahoo, as well as user-generated content from blogs, forums, social networking sites, and wikis.\n*   **Geographic (Blue)**: This category comprises maps and environmental and maritime data.\n*   **Observation (Green)**: Observation involves using cameras, video recorders, and reporting.\n*   **Academia (Orange)**: The Academia section includes experts, research, and c",
+      "category": "image_analysis",
+      "timestamp": "2026-03-14T18:13:19.628800"
+    },
+    {
+      "id": "cefba067-17dc-45c1-9961-9bbc7ded66cb",
+      "topic": "Summary: Text",
+      "content": "the following: https://www.collidu.com/presentation-open-source-intelligence-osint",
+      "category": "summarized_content",
+      "timestamp": "2026-03-14T18:14:33.509582"
+    },
+    {
+      "id": "756d9f3f-7a84-46ba-9bd5-93e02681a547",
+      "topic": "Summary: Text",
+      "content": "the following: the presentation on open-source intelligence (osint) from collidu provides an overview of the concept, its importance, and its applications. osint involves collecting and analyzing information from publicly available sources to support decision-making, and it has become a crucial aspect of intelligence gathering in various fields. the presentation highlights the benefits of osint, including its cost-effectiveness and ability to provide real-time information. it also discusses the challenges and limitations of osint, such as information overload and verification of sources. the presentation aims to educate users on how to effectively utilize osint tools and techniques.🔑 key points:• osint involves collecting and analyzing information from publicly available sources, such as social media, online databases, and news articles.• the benefits of osint include its cost-effectiveness, ability to provide real-time information, and potential to uncover hidden information.• osint h",
+      "category": "summarized_content",
+      "timestamp": "2026-03-14T18:15:18.388151"
+    },
+    {
+      "id": "9d848e8a-dfad-416e-813b-3453b500ec7b",
+      "topic": "General",
+      "content": "Save this knowledge: topic=, content=, category=",
+      "category": "general",
+      "timestamp": "2026-03-14T18:36:53.203109"
     }
   ]
 }

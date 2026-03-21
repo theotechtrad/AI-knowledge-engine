@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Engine AI</title>
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +21,6 @@
             position: relative;
         }
 
-        /* Animated background particles */
         .particles {
             position: fixed;
             top: 0;
@@ -53,9 +53,10 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
-        /* Header with space background */
+        /* ===== HEADER ===== */
         .header {
             padding: 20px;
             text-align: center;
@@ -64,17 +65,15 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            transition: all 0.5s ease;
         }
 
-        /* Space background layer in header */
         .header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background:
                 radial-gradient(ellipse at 20% 30%, rgba(100, 150, 255, 0.15) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 70%, rgba(150, 180, 255, 0.12) 0%, transparent 50%),
                 radial-gradient(ellipse at 50% 50%, rgba(80, 120, 200, 0.08) 0%, transparent 60%),
@@ -82,13 +81,10 @@
             z-index: 0;
         }
 
-        /* Stars container in header */
         .header-stars {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: 1;
             pointer-events: none;
         }
@@ -101,52 +97,25 @@
         }
 
         .star.small {
-            width: 1px;
-            height: 1px;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 0 3px rgba(255, 255, 255, 1),
-                        0 0 6px rgba(255, 255, 255, 0.8),
-                        0 0 10px rgba(200, 220, 255, 0.5);
+            width: 1px; height: 1px;
+            box-shadow: 0 0 3px rgba(255,255,255,1), 0 0 6px rgba(255,255,255,0.8);
         }
-
         .star.medium {
-            width: 1px;
-            height: 1px;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 0 4px rgba(255, 255, 255, 1),
-                        0 0 8px rgba(200, 220, 255, 1),
-                        0 0 12px rgba(150, 180, 255, 0.7);
+            width: 1px; height: 1px;
+            box-shadow: 0 0 4px rgba(255,255,255,1), 0 0 8px rgba(200,220,255,1);
         }
-
         .star.large {
-            width: 1px;
-            height: 1px;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 0 5px rgba(255, 255, 255, 1),
-                        0 0 10px rgba(200, 230, 255, 1),
-                        0 0 15px rgba(150, 200, 255, 0.9),
-                        0 0 20px rgba(100, 180, 255, 0.6);
+            width: 1px; height: 1px;
+            box-shadow: 0 0 5px rgba(255,255,255,1), 0 0 10px rgba(200,230,255,1), 0 0 15px rgba(150,200,255,0.9);
         }
-        
         .star.bright {
-            width: 1px;
-            height: 1px;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 0 6px rgba(255, 255, 255, 1),
-                        0 0 12px rgba(220, 240, 255, 1),
-                        0 0 18px rgba(180, 220, 255, 0.8),
-                        0 0 25px rgba(150, 200, 255, 0.5);
+            width: 1px; height: 1px;
+            box-shadow: 0 0 6px rgba(255,255,255,1), 0 0 12px rgba(220,240,255,1), 0 0 18px rgba(180,220,255,0.8);
         }
 
         @keyframes twinkle {
-            0%, 100% { 
-                opacity: 0.7;
-                transform: scale(1);
-            }
-            50% { 
-                opacity: 1;
-                transform: scale(1.3);
-            }
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
         }
 
         .logo-container {
@@ -158,36 +127,23 @@
             margin-bottom: 10px;
             position: relative;
             z-index: 2;
+            transition: all 0.5s ease;
         }
 
         .logo-symbol {
-            width: 180px;
-            height: 180px;
+            width: 180px; height: 180px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 10, 20, 0.9) 0%, rgba(0, 30, 50, 0.6) 100%);
+            background: radial-gradient(circle, rgba(0,10,20,0.9) 0%, rgba(0,30,50,0.6) 100%);
             padding: 15px;
             border: 3px solid rgba(0, 200, 255, 0.6);
-            box-shadow: 0 0 40px rgba(0, 200, 255, 0.8),
-                        0 0 80px rgba(0, 200, 255, 0.5),
-                        inset 0 0 30px rgba(0, 200, 255, 0.2);
-            filter: drop-shadow(0 0 30px rgba(0, 200, 255, 0.9)) 
-                    drop-shadow(0 0 60px rgba(0, 200, 255, 0.6));
+            box-shadow: 0 0 40px rgba(0,200,255,0.8), 0 0 80px rgba(0,200,255,0.5), inset 0 0 30px rgba(0,200,255,0.2);
+            filter: drop-shadow(0 0 30px rgba(0,200,255,0.9)) drop-shadow(0 0 60px rgba(0,200,255,0.6));
             animation: pulse 3s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { 
-                transform: scale(1); 
-                filter: drop-shadow(0 0 30px rgba(0, 200, 255, 0.9)) 
-                        drop-shadow(0 0 60px rgba(0, 200, 255, 0.6));
-                border-color: rgba(0, 200, 255, 0.6);
-            }
-            50% { 
-                transform: scale(1.05); 
-                filter: drop-shadow(0 0 40px rgba(0, 200, 255, 1)) 
-                        drop-shadow(0 0 80px rgba(0, 200, 255, 0.8));
-                border-color: rgba(0, 200, 255, 0.9);
-            }
+            0%, 100% { transform: scale(1); border-color: rgba(0,200,255,0.6); }
+            50% { transform: scale(1.05); border-color: rgba(0,200,255,0.9); }
         }
 
         h1 {
@@ -201,6 +157,7 @@
             margin: 0;
             position: relative;
             z-index: 2;
+            transition: all 0.5s ease;
         }
 
         .tagline {
@@ -210,49 +167,86 @@
             opacity: 0.8;
             position: relative;
             z-index: 2;
+            transition: all 0.5s ease;
         }
 
-        /* Chat container */
+        /* ===== HEADER COLLAPSE ===== */
+        .header.collapsed {
+            padding: 8px 20px;
+        }
+
+        .header.collapsed .logo-container {
+            display: none;
+        }
+
+        .header.collapsed .tagline {
+            display: none;
+        }
+
+        .header.collapsed h1 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        /* ===== RESET BUTTON ===== */
+        .reset-btn {
+            display: none;
+            margin: 6px auto 0 auto;
+            padding: 5px 18px;
+            background: rgba(0, 200, 255, 0.1);
+            border: 1px solid rgba(0, 200, 255, 0.4);
+            border-radius: 20px;
+            color: #00d4ff;
+            font-size: 0.78em;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .reset-btn:hover {
+            background: rgba(0, 200, 255, 0.25);
+            box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .header.collapsed .reset-btn {
+            display: block;
+        }
+
+        /* ===== CHAT CONTAINER ===== */
         .chat-container {
             flex: 1;
             display: flex;
             flex-direction: column;
-            max-width: 1200px;
-            margin: 0 auto;
             width: 100%;
-            padding: 20px;
+            padding: 0;
             overflow: hidden;
-            border-top: none;
+            min-height: 0;
         }
 
         .messages {
             flex: 1;
-            overflow-y: auto;
-            padding: 20px;
+            overflow-y: hidden;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 20px;
             background: transparent;
-            overflow-y: hidden;
+            min-height: 0;
         }
 
         .messages.has-messages {
             overflow-y: auto;
+            padding: 20px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
         }
 
-        .messages::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .messages::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-        }
-
-        .messages::-webkit-scrollbar-thumb {
-            background: rgba(0, 200, 255, 0.5);
-            border-radius: 10px;
-        }
+        .messages::-webkit-scrollbar { width: 8px; }
+        .messages::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); border-radius: 10px; }
+        .messages::-webkit-scrollbar-thumb { background: rgba(0,200,255,0.5); border-radius: 10px; }
 
         .message {
             display: flex;
@@ -265,13 +259,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .message.user {
-            flex-direction: row-reverse;
-        }
+        .message.user { flex-direction: row-reverse; }
 
         .message-avatar {
-            width: 45px;
-            height: 45px;
+            width: 45px; height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -281,19 +272,18 @@
 
         .message.user .message-avatar {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 20px rgba(102,126,234,0.5);
         }
 
         .message.ai .message-avatar {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0,0,0,0.5);
             border: 2px solid #00d4ff;
-            box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0,200,255,0.5);
             padding: 5px;
         }
 
         .message-avatar img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: contain;
             filter: brightness(1.2);
         }
@@ -308,21 +298,23 @@
         .message.user .message-content {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-bottom-right-radius: 5px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(102,126,234,0.3);
         }
 
         .message.ai .message-content {
-            background: rgba(0, 200, 255, 0.1);
-            border: 1px solid rgba(0, 200, 255, 0.3);
+            background: rgba(0,200,255,0.1);
+            border: 1px solid rgba(0,200,255,0.3);
             border-bottom-left-radius: 5px;
-            box-shadow: 0 4px 15px rgba(0, 200, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0,200,255,0.2);
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
         .typing-indicator {
             display: none;
             padding: 15px 20px;
-            background: rgba(0, 200, 255, 0.1);
-            border: 1px solid rgba(0, 200, 255, 0.3);
+            background: rgba(0,200,255,0.1);
+            border: 1px solid rgba(0,200,255,0.3);
             border-radius: 15px;
             width: fit-content;
         }
@@ -334,13 +326,11 @@
         }
 
         .typing-dot {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background: #00d4ff;
             border-radius: 50%;
             animation: typing 1.4s infinite;
         }
-
         .typing-dot:nth-child(2) { animation-delay: 0.2s; }
         .typing-dot:nth-child(3) { animation-delay: 0.4s; }
 
@@ -349,11 +339,11 @@
             30% { transform: translateY(-10px); opacity: 1; }
         }
 
-        /* Input area */
+        /* ===== INPUT AREA ===== */
         .input-area {
             padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-top: 1px solid rgba(0, 200, 255, 0.3);
+            background: rgba(0,0,0,0.3);
+            border-top: 1px solid rgba(0,200,255,0.3);
             backdrop-filter: blur(10px);
         }
 
@@ -367,8 +357,8 @@
         #userInput {
             flex: 1;
             padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(0, 200, 255, 0.3);
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(0,200,255,0.3);
             border-radius: 25px;
             color: #e0e0e0;
             font-size: 1em;
@@ -378,8 +368,8 @@
 
         #userInput:focus {
             border-color: #00d4ff;
-            box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
-            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(0,200,255,0.3);
+            background: rgba(255,255,255,0.08);
         }
 
         #sendBtn {
@@ -391,24 +381,14 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 200, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0,200,255,0.3);
         }
 
-        #sendBtn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 200, 255, 0.5);
-        }
+        #sendBtn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,200,255,0.5); }
+        #sendBtn:active { transform: translateY(0); }
+        #sendBtn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-        #sendBtn:active {
-            transform: translateY(0);
-        }
-
-        #sendBtn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        /* Quick actions */
+        /* ===== QUICK ACTIONS ===== */
         .quick-actions {
             display: flex;
             gap: 10px;
@@ -419,8 +399,8 @@
 
         .quick-btn {
             padding: 8px 16px;
-            background: rgba(0, 200, 255, 0.1);
-            border: 1px solid rgba(0, 200, 255, 0.3);
+            background: rgba(0,200,255,0.1);
+            border: 1px solid rgba(0,200,255,0.3);
             border-radius: 20px;
             color: #00d4ff;
             cursor: pointer;
@@ -429,83 +409,1009 @@
         }
 
         .quick-btn:hover {
-            background: rgba(0, 200, 255, 0.2);
+            background: rgba(0,200,255,0.2);
             border-color: #00d4ff;
             transform: translateY(-2px);
         }
 
+        /* ===== WELCOME MESSAGE ===== */
         .welcome-message {
             text-align: center;
-            padding: 0px 20px 80px 20px;
-            opacity: 1;
             position: relative;
-            min-height: 500px;
+            flex: 1;
+            width: 100%;
             background: transparent;
-            margin: -20px 0 0 0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 0px;
+            margin-top: -5px;
+            overflow: hidden;
+            min-height: 0;
         }
 
-        .welcome-message::before {
-            content: '';
+        .welcome-bg-logo {
             position: absolute;
-            top: 35%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 900px;
-            height: 85%;
-            background-image: url('symbol2.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.35;
+            /* Always fill width fully, height auto so full image shows */
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+            opacity: 0.40;
             z-index: 0;
-            filter: drop-shadow(0 0 60px rgba(0, 200, 255, 0.7)) 
-                    drop-shadow(0 0 100px rgba(0, 200, 255, 0.4));
+            pointer-events: none;
+            filter: drop-shadow(0 0 60px rgba(0,200,255,0.7))
+                    drop-shadow(0 0 100px rgba(0,200,255,0.4));
         }
 
         .welcome-message h2 {
             color: #00d4ff;
-            margin-bottom: 25px;
-            font-size: 2.2em;
+            margin-bottom: 16px;
+            font-size: clamp(1.4em, 4vw, 2.2em);
             position: relative;
             z-index: 1;
-            text-shadow: 0 0 30px rgba(0, 200, 255, 0.8),
-                         0 0 60px rgba(0, 200, 255, 0.4);
+            text-shadow: 0 0 30px rgba(0,200,255,0.8), 0 0 60px rgba(0,200,255,0.4);
             font-weight: 700;
         }
 
         .welcome-message p {
-            margin-bottom: 18px;
+            margin-bottom: 10px;
             position: relative;
             z-index: 1;
-            font-size: 1.15em;
+            font-size: clamp(0.88em, 2.5vw, 1.15em);
             color: #e0e0e0;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            padding: 0 10px;
         }
+
+        /* ===== CODE FORMATTING ===== */
+        /* ===== CODE BLOCK IDE STYLE ===== */
+        .code-block-wrapper {
+            margin: 14px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            background: #1a1a2e;
+        }
+
+        .code-block-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(90deg, #0d1b2a, #1a2a3a);
+            padding: 8px 14px;
+            border-bottom: 1px solid rgba(0,212,255,0.2);
+        }
+
+        .code-block-header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .code-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .code-dot {
+            width: 11px; height: 11px;
+            border-radius: 50%;
+        }
+        .code-dot.red   { background: #ff5f57; }
+        .code-dot.yellow{ background: #febc2e; }
+        .code-dot.green { background: #28c840; }
+
+        .code-lang-badge {
+            font-size: 0.72em;
+            color: #00d4ff;
+            background: rgba(0,212,255,0.12);
+            padding: 2px 9px;
+            border-radius: 20px;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(0,212,255,0.25);
+        }
+
+        .code-copy-btn {
+            background: rgba(0,212,255,0.1);
+            border: 1px solid rgba(0,212,255,0.3);
+            color: #00d4ff;
+            font-size: 0.75em;
+            padding: 4px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .code-copy-btn:hover {
+            background: rgba(0,212,255,0.25);
+            border-color: #00d4ff;
+            color: #fff;
+        }
+
+        .code-copy-btn.copied {
+            background: rgba(0,255,136,0.15);
+            border-color: #00ff88;
+            color: #00ff88;
+        }
+
+        .code-block-wrapper pre {
+            margin: 0 !important;
+            padding: 16px 18px !important;
+            background: #0d1117 !important;
+            overflow-x: auto !important;
+            max-height: 480px;
+            overflow-y: auto;
+        }
+
+        .code-block-wrapper pre code {
+            font-family: 'Fira Code', 'Courier New', Consolas, monospace !important;
+            font-size: 0.88em !important;
+            line-height: 1.65 !important;
+            background: transparent !important;
+            color: inherit !important;
+        }
+
+        /* scrollbar for code block */
+        .code-block-wrapper pre::-webkit-scrollbar { height: 5px; width: 5px; }
+        .code-block-wrapper pre::-webkit-scrollbar-track { background: #0d1117; }
+        .code-block-wrapper pre::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.3); border-radius: 3px; }
+
+        .message-content code:not([class]) {
+            font-family: 'Courier New', Consolas, monospace !important;
+            font-size: 0.88em;
+            color: #00ff88;
+            background: rgba(0,255,136,0.1);
+            padding: 2px 7px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,255,136,0.2);
+        }
+
+        .message-content strong { color: #00d4ff; font-weight: 700; }
+
+        /* ===== HAMBURGER BUTTON ===== */
+        .hamburger-btn {
+            position: absolute;
+            top: 20px; left: 20px;
+            z-index: 10;
+            background: rgba(0,200,255,0.1);
+            border: 2px solid rgba(0,200,255,0.4);
+            border-radius: 10px;
+            color: #00d4ff;
+            font-size: 1.5em;
+            width: 45px; height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .hamburger-btn:hover {
+            background: rgba(0,200,255,0.2);
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0,200,255,0.4);
+            transform: scale(1.05);
+        }
+
+        /* ===== SIDEBAR OVERLAY ===== */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .sidebar-overlay.active { opacity: 1; visibility: visible; }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(180deg, #0a0a1a 0%, #0d1525 50%, #0a0a1a 100%);
+            border-right: 2px solid rgba(0,200,255,0.3);
+            z-index: 100;
+            transition: left 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 5px 0 30px rgba(0,0,0,0.5);
+        }
+
+        .sidebar.active { left: 0; }
+
+        .sidebar-header {
+            padding: 25px 20px;
+            border-bottom: 1px solid rgba(0,200,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .sidebar-header h3 {
+            color: #00d4ff;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #00d4ff, #0080ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+
+        .sidebar-close:hover { opacity: 1; transform: scale(1.1); }
+
+        .sidebar-features {
+            padding: 15px 0;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+            color: #c0c0c0;
+            font-size: 0.95em;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(0,200,255,0.08);
+            border-left-color: #00d4ff;
+            color: #ffffff;
+        }
+
+        .sidebar-item .sidebar-icon { font-size: 1.3em; width: 30px; text-align: center; flex-shrink: 0; }
+        .sidebar-item .sidebar-label { font-weight: 500; }
+
+        /* ===== SIDEBAR SCROLL BUTTON ===== */
+        .sidebar-features {
+            padding: 15px 0;
+            overflow-y: auto;
+            max-height: 320px;
+            scrollbar-width: none;
+            flex-shrink: 0;
+        }
+
+        .sidebar-features::-webkit-scrollbar { display: none; }
+
+        .sidebar-scroll-btn {
+            display: none;
+            width: calc(100% - 20px);
+            margin: 0 10px 8px 10px;
+            padding: 7px;
+            background: rgba(0, 200, 255, 0.08);
+            border: 1px solid rgba(0, 200, 255, 0.25);
+            border-radius: 8px;
+            color: #00d4ff;
+            font-size: 0.85em;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-scroll-btn:hover {
+            background: rgba(0, 200, 255, 0.18);
+            border-color: #00d4ff;
+        }
+
+        .sidebar-scroll-btn.visible { display: block; }
+
+        /* ===== CHAT HISTORY SECTION ===== */
+        .sidebar-history {
+            border-top: 1px solid rgba(0, 200, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .history-header {
+            padding: 12px 24px 8px 24px;
+            color: #00d4ff;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            flex-shrink: 0;
+        }
+
+        .history-list {
+            overflow-y: auto;
+            flex: 1;
+            padding-bottom: 10px;
+        }
+
+        .history-list::-webkit-scrollbar { width: 4px; }
+        .history-list::-webkit-scrollbar-track { background: transparent; }
+        .history-list::-webkit-scrollbar-thumb { background: rgba(0,200,255,0.3); border-radius: 4px; }
+
+        .history-item {
+            padding: 8px 20px 8px 24px;
+            font-size: 0.78em;
+            color: #a0a0a0;
+            border-left: 3px solid transparent;
+            line-height: 1.4;
+        }
+
+        .history-item.user-msg {
+            color: #b0b0ff;
+            border-left-color: rgba(102,126,234,0.6);
+            background: rgba(102,126,234,0.04);
+        }
+
+        .history-item.ai-msg {
+            color: #80c4c4;
+            border-left-color: rgba(0,200,255,0.3);
+            background: rgba(0,200,255,0.03);
+            font-style: italic;
+        }
+
+        .history-empty {
+            padding: 12px 24px;
+            color: rgba(255,255,255,0.2);
+            font-size: 0.8em;
+            font-style: italic;
+        }
+
+        /* ===== SIDEBAR FOOTER ===== */
+        .sidebar-footer {
+            padding: 12px 20px;
+            border-top: 1px solid rgba(0,200,255,0.2);
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.75em;
+            flex-shrink: 0;
+        }
+
+        /* ===== FILE UPLOAD BUTTON ===== */
+        .file-upload-btn {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 200, 255, 0.1);
+            border: 2px solid rgba(0, 200, 255, 0.3);
+            border-radius: 50%;
+            color: #00d4ff;
+            font-size: 1.3em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .file-upload-btn:hover {
+            background: rgba(0, 200, 255, 0.2);
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.4);
+            transform: scale(1.08);
+        }
+
+        .file-preview {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(0, 200, 255, 0.08);
+            border: 1px solid rgba(0, 200, 255, 0.3);
+            border-radius: 20px;
+            margin-bottom: 10px;
+            font-size: 0.82em;
+            color: #00d4ff;
+            max-width: 100%;
+        }
+
+        .file-preview.visible { display: flex; }
+
+        .file-preview-name {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .file-preview-remove {
+            cursor: pointer;
+            opacity: 0.6;
+            font-size: 1em;
+            flex-shrink: 0;
+        }
+
+        .file-preview-remove:hover { opacity: 1; }
+
+        /* ===== FULLY RESPONSIVE ===== */
+
+        /* Large desktop: 1200px+ */
+        @media (min-width: 1200px) {
+            .chat-container { padding: 20px 40px; }
+            .message-content { max-width: 65%; }
+        }
+
+        /* Laptop: 1024px */
+        @media (max-width: 1024px) {
+            h1 { font-size: 2.2em; }
+            .logo-symbol { width: 160px; height: 160px; }
+            .message-content { max-width: 72%; }
+        }
+
+        /* Tablet landscape: 768px-1023px */
+        @media (max-width: 768px) {
+            h1 { font-size: clamp(1.4em, 4vw, 1.9em); letter-spacing: 1px; }
+            .logo-symbol { width: 130px; height: 130px; }
+            .tagline { font-size: 0.8em; }
+            .chat-container { padding: 12px; }
+            .messages { padding: 12px; gap: 14px; }
+            .message-content { max-width: 78%; padding: 12px 15px; font-size: 0.95em; }
+            .message-avatar { width: 36px; height: 36px; }
+            .quick-actions { gap: 6px; }
+            .quick-btn { padding: 6px 11px; font-size: 0.82em; }
+            #userInput { font-size: 0.95em; padding: 12px 16px; }
+            #sendBtn { padding: 12px 20px; font-size: 0.9em; }
+            .file-upload-btn { width: 44px; height: 44px; font-size: 1.1em; }
+            .input-area { padding: 14px 12px; }
+            .sidebar { width: 280px; left: -300px; }
+            .welcome-message h2 { font-size: 1.8em; }
+        }
+
+        /* Mobile: 480px-767px */
+        @media (max-width: 480px) {
+            h1 { font-size: clamp(1.1em, 5vw, 1.5em); letter-spacing: 0.5px; }
+            .logo-symbol { width: 100px; height: 100px; }
+            .tagline { font-size: 0.75em; }
+            .header { padding: 12px 10px; }
+            .hamburger-btn { top: 12px; left: 8px; width: 36px; height: 36px; font-size: 1.1em; }
+            .chat-container { padding: 8px; }
+            .messages { padding: 8px; gap: 10px; }
+            .message-content { max-width: 85%; padding: 10px 13px; font-size: 0.9em; }
+            .message-avatar { width: 30px; height: 30px; }
+            .message { gap: 8px; }
+            .quick-actions { gap: 5px; margin-bottom: 10px; flex-wrap: wrap; }
+            .quick-btn { padding: 5px 9px; font-size: 0.76em; border-radius: 15px; }
+            #userInput { font-size: 0.88em; padding: 10px 13px; }
+            #sendBtn { padding: 10px 14px; font-size: 0.85em; }
+            .file-upload-btn { width: 38px; height: 38px; font-size: 1em; }
+            .input-area { padding: 10px 8px; }
+            .input-container { gap: 6px; }
+            .sidebar { width: 85vw; left: -90vw; }
+            .sidebar-header { padding: 18px 14px; }
+            .sidebar-item { padding: 13px 16px; font-size: 0.9em; }
+            .welcome-message h2 { font-size: 1.4em; margin-bottom: 10px; }
+            .welcome-message p { font-size: 0.88em; }
+            .header.collapsed h1 { font-size: 1em; }
+        }
+
+        /* Very small phones: below 360px */
+        @media (max-width: 360px) {
+            h1 { font-size: 1em; }
+            .logo-symbol { width: 85px; height: 85px; }
+            .quick-btn { font-size: 0.72em; padding: 4px 7px; }
+            #sendBtn { padding: 9px 11px; font-size: 0.8em; }
+            .message-content { max-width: 90%; font-size: 0.85em; }
+            .sidebar { width: 92vw; }
+        }
+    
+
+        /* ===== MINDMAP DETAIL BOX ===== */
+        .mindmap-detail-box {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 16px;
+            background: rgba(0,212,255,0.06);
+            border: 1px solid rgba(0,212,255,0.3);
+            border-radius: 10px;
+            padding: 16px;
+            animation: fadeIn 0.3s ease;
+        }
+        .mindmap-detail-title {
+            color: #00d4ff;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0,212,255,0.2);
+        }
+        .mindmap-detail-text {
+            color: #c0d8e0;
+            font-size: 0.82em;
+            line-height: 1.7;
+        }
+        /* ===== ROADMAP DETAIL ===== */
+        .roadmap-phase-detail {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: #b0c8d0;
+            font-size: 0.8em;
+            line-height: 1.8;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        /* ===== RESOURCE LINKS ===== */
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 14px 16px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            background: rgba(0,0,0,0.2);
+        }
+        .resource-links-title {
+            width: 100%;
+            font-size: 0.75em;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            color: #a0c0d0;
+            font-size: 0.76em;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .resource-link:hover {
+            background: rgba(0,212,255,0.12);
+            border-color: rgba(0,212,255,0.4);
+            color: #00d4ff;
+            transform: translateY(-1px);
+        }
+        /* Wiki summary */
+        .wiki-summary {
+            margin: 0 16px 12px 16px;
+            padding: 10px 14px;
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid rgba(0,212,255,0.4);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.78em;
+            color: #90a8b0;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+
+        /* ===== SUMMARIZER MODAL ===== */
+        .summarizer-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+        /* active handled by JS */
+        .summarizer-box {
+            background: linear-gradient(135deg, #0d1117, #0a1628);
+            border: 1px solid rgba(0,212,255,0.4);
+            border-radius: 16px;
+            padding: 28px;
+            width: 90%;
+            max-width: 520px;
+            box-shadow: 0 0 60px rgba(0,212,255,0.2);
+        }
+        .summarizer-box h3 { color: #00d4ff; font-size: 1.1em; margin-bottom: 6px; letter-spacing: 1px; }
+        .summarizer-box p { color: rgba(255,255,255,0.5); font-size: 0.82em; margin-bottom: 20px; }
+        .summarizer-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+        .summarizer-tab {
+            flex: 1; padding: 8px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; color: rgba(255,255,255,0.5);
+            font-size: 0.82em; cursor: pointer; text-align: center; transition: all 0.2s;
+        }
+        .summarizer-tab.active, .summarizer-tab:hover {
+            background: rgba(0,212,255,0.12);
+            border-color: rgba(0,212,255,0.5); color: #00d4ff;
+        }
+        .summarizer-input {
+            width: 100%; min-height: 100px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(0,212,255,0.3);
+            border-radius: 10px; padding: 12px; color: #e0e0e0;
+            font-size: 0.88em; resize: vertical; margin-bottom: 14px; font-family: inherit;
+            box-sizing: border-box;
+        }
+        .summarizer-input:focus { outline: none; border-color: #00d4ff; }
+        .summarizer-actions { display: flex; gap: 10px; justify-content: flex-end; }
+        .summarizer-cancel {
+            padding: 8px 18px; background: transparent;
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;
+            color: rgba(255,255,255,0.5); cursor: pointer; font-size: 0.85em;
+        }
+        .summarizer-submit {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #00d4ff, #0080ff);
+            border: none; border-radius: 8px; color: white;
+            font-weight: 600; cursor: pointer; font-size: 0.85em;
+        }
+
+        /* ===== MINDMAP VISUAL ===== */
+        .mindmap-wrapper {
+            margin: 14px 0;
+            background: linear-gradient(135deg, #0d1117, #0a1628);
+            border: 1px solid rgba(0,212,255,0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .mindmap-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: linear-gradient(90deg, #0d1b2a, #1a2a3a);
+            border-bottom: 1px solid rgba(0,212,255,0.2);
+            font-size: 0.85em;
+            color: #00d4ff;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .mindmap-body {
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        .mindmap-center {
+            background: linear-gradient(135deg, #00d4ff, #0080ff);
+            color: #000;
+            font-weight: 800;
+            font-size: 1em;
+            padding: 12px 28px;
+            border-radius: 40px;
+            box-shadow: 0 0 30px rgba(0,212,255,0.6);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+        .mindmap-connector-main {
+            width: 2px;
+            height: 20px;
+            background: rgba(0,212,255,0.5);
+        }
+        .mindmap-branches {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+        .mindmap-branches::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background: rgba(0,212,255,0.3);
+        }
+        .mindmap-branch {
+            background: rgba(0,212,255,0.08);
+            border: 1px solid rgba(0,212,255,0.25);
+            border-radius: 10px;
+            padding: 10px 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .mindmap-branch:hover {
+            background: rgba(0,212,255,0.18);
+            border-color: #00d4ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,212,255,0.2);
+        }
+        .mindmap-branch-title {
+            color: #00d4ff;
+            font-weight: 700;
+            font-size: 0.82em;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .mindmap-branch-items {
+            display: none;
+            flex-direction: column;
+            gap: 3px;
+            margin-top: 6px;
+        }
+        .mindmap-branch.expanded .mindmap-branch-items {
+            display: flex;
+        }
+        .mindmap-branch-item {
+            color: #a0c8d0;
+            font-size: 0.75em;
+            padding: 2px 0 2px 10px;
+            border-left: 2px solid rgba(0,212,255,0.3);
+        }
+
+        /* ===== ROADMAP VISUAL ===== */
+        .roadmap-wrapper {
+            margin: 14px 0;
+            background: linear-gradient(135deg, #0d1117, #0a1628);
+            border: 1px solid rgba(124,77,255,0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .roadmap-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: linear-gradient(90deg, #1a0d2a, #2a1a3a);
+            border-bottom: 1px solid rgba(124,77,255,0.2);
+            font-size: 0.85em;
+            color: #b388ff;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .roadmap-body {
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .roadmap-phase {
+            display: flex;
+            gap: 16px;
+            position: relative;
+        }
+        .roadmap-phase:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 44px;
+            bottom: -16px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--phase-color), transparent);
+        }
+        .roadmap-phase-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .roadmap-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid var(--phase-color);
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            box-shadow: 0 0 15px var(--phase-color);
+            flex-shrink: 0;
+        }
+        .roadmap-phase-content {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+        }
+        .roadmap-phase-title {
+            font-weight: 700;
+            font-size: 0.9em;
+            color: var(--phase-color);
+            margin-bottom: 2px;
+        }
+        .roadmap-phase-duration {
+            font-size: 0.72em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 8px;
+        }
+        .roadmap-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .roadmap-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.8em;
+            color: #c0c0d0;
+        }
+        .roadmap-step::before {
+            content: '→';
+            color: var(--phase-color);
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+
+        
+
+        /* ===== SUMMARIZER MODAL ===== */
+        .summ-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+        .summ-box {
+            background: linear-gradient(135deg, #0d1117, #0a1628);
+            border: 1px solid rgba(0,212,255,0.4);
+            border-radius: 16px;
+            padding: 28px;
+            width: 90%;
+            max-width: 520px;
+            box-shadow: 0 0 60px rgba(0,212,255,0.2);
+        }
+        .summ-box h3 { color: #00d4ff; font-size: 1.1em; margin-bottom: 6px; }
+        .summ-box p { color: rgba(255,255,255,0.5); font-size: 0.82em; margin-bottom: 18px; }
+        .summ-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+        .summ-tab {
+            flex: 1; padding: 8px; background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+            color: rgba(255,255,255,0.5); font-size: 0.82em; cursor: pointer;
+            text-align: center; transition: all 0.2s;
+        }
+        .summ-tab.on { background: rgba(0,212,255,0.15); border-color: #00d4ff; color: #00d4ff; }
+        .summ-textarea {
+            width: 100%; min-height: 110px; background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(0,212,255,0.3); border-radius: 10px;
+            padding: 12px; color: #e0e0e0; font-size: 0.88em;
+            resize: vertical; margin-bottom: 14px; font-family: inherit; box-sizing: border-box;
+        }
+        .summ-textarea:focus { outline: none; border-color: #00d4ff; }
+        .summ-btns { display: flex; gap: 10px; justify-content: flex-end; }
+        .summ-cancel {
+            padding: 8px 18px; background: transparent;
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;
+            color: rgba(255,255,255,0.5); cursor: pointer; font-size: 0.85em;
+        }
+        .summ-go {
+            padding: 8px 20px; background: linear-gradient(135deg, #00d4ff, #0080ff);
+            border: none; border-radius: 8px; color: #000;
+            font-weight: 700; cursor: pointer; font-size: 0.85em;
+        }
+
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 </head>
 <body>
-    <!-- Animated particles background -->
+
     <div class="particles" id="particles"></div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+    <!-- Sidebar Drawer -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>⚡ Features</h3>
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+        </div>
+
+        <!-- 7 Feature Items -->
+        <div class="sidebar-features" id="sidebarFeatures">
+            <div class="sidebar-item" onclick="sidebarAction('Search Wikipedia for: ')">
+                <span class="sidebar-icon">🔍</span>
+                <span class="sidebar-label">Search Wikipedia</span>
+            </div>
+            <div class="sidebar-item" onclick="openSummarizer()">
+                <span class="sidebar-icon">📝</span>
+                <span class="sidebar-label">Universal Summarizer</span>
+            </div>
+            <div class="sidebar-item" onclick="sidebarAction('Expand this idea: ')">
+                <span class="sidebar-icon">💡</span>
+                <span class="sidebar-label">Idea Expander</span>
+            </div>
+            <div class="sidebar-item" onclick="sidebarAction('Solve step by step: ')">
+                <span class="sidebar-icon">🧩</span>
+                <span class="sidebar-label">Step by Step Solver</span>
+            </div>
+            <div class="sidebar-item" onclick="sidebarAction('Create code for: ')">
+                <span class="sidebar-icon">💻</span>
+                <span class="sidebar-label">Code Creator</span>
+            </div>
+            <div class="sidebar-item" onclick="sidebarAction('Create a mindmap for: ')">
+                <span class="sidebar-icon">🗺️</span>
+                <span class="sidebar-label">Mindmap Generator</span>
+            </div>
+            <div class="sidebar-item" onclick="sidebarAction('Create a learning roadmap for: ')">
+                <span class="sidebar-icon">🛣️</span>
+                <span class="sidebar-label">Roadmap Generator</span>
+            </div>
+        </div>
+        <!-- Scroll Buttons -->
+        <button class="sidebar-scroll-btn" id="scrollDownBtn" onclick="scrollFeatures('down')">▼ More Features</button>
+        <button class="sidebar-scroll-btn" id="scrollUpBtn" onclick="scrollFeatures('up')">▲ Back to Top</button>
+
+        <!-- Chat History Section -->
+        <div class="sidebar-history">
+            <div class="history-header">🕘 Chat History</div>
+            <div class="history-list" id="chatHistoryList">
+                <div class="history-empty">No history yet</div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">Knowledge Engine v1.0</div>
+    </div>
 
     <div class="container">
         <!-- Header -->
-        <div class="header">
+        <div class="header" id="mainHeader">
+            <button class="hamburger-btn" onclick="toggleSidebar()">☰</button>
             <div class="header-stars" id="headerStars"></div>
             <div class="logo-container">
                 <h1>KNOWLEDGE ENGINE</h1>
                 <img class="logo-symbol" src="symbol.png" alt="Knowledge Engine Symbol">
             </div>
             <div class="tagline">🧠 Your Intelligent Knowledge Assistant</div>
+            <!-- Reset Button: only visible when header is collapsed -->
+            <button class="reset-btn" onclick="resetChat()">🔄 New Chat</button>
         </div>
 
         <!-- Chat container -->
         <div class="chat-container">
             <div class="messages" id="messages">
                 <div class="welcome-message">
+                    <img class="welcome-bg-logo" src="symbol2.png" alt="">
                     <h2>Welcome to Knowledge Engine</h2>
                     <p>💡 Ask me anything, and I'll search, learn, and remember for you</p>
-                    <p>🔍 Search Wikipedia • 💾 Save Knowledge • 🧮 Calculate • ⏰ Get Time</p>
                 </div>
             </div>
 
@@ -519,20 +1425,97 @@
         <!-- Input area -->
         <div class="input-area">
             <div class="quick-actions">
-                <button class="quick-btn" onclick="quickQuery('Tell me about quantum physics')">🔬 Quantum Physics</button>
-                <button class="quick-btn" onclick="quickQuery('Show all my saved knowledge')">📚 My Knowledge</button>
-                <button class="quick-btn" onclick="quickQuery('Calculate sqrt(144)')">🧮 Calculate</button>
-                <button class="quick-btn" onclick="quickQuery('What time is it?')">⏰ Current Time</button>
+                <button class="quick-btn" onclick="quickQuery('Please list all my knowledge categories and topics')">📂 List Categories</button>
+                <button class="quick-btn" onclick="prefillInput('Save this knowledge: topic=, content=, category=')">💾 Save Knowledge</button>
+                <button class="quick-btn" onclick="prefillInput('Retrieve knowledge about: ')">🔎 Retrieve Knowledge</button>
+            </div>
+            <!-- File preview bar -->
+            <div class="file-preview" id="filePreview">
+                <span id="filePreviewIcon">📎</span>
+                <span class="file-preview-name" id="filePreviewName"></span>
+                <span class="file-preview-remove" onclick="removeFile()" title="Remove file">✕</span>
             </div>
             <div class="input-container">
+                <input type="file" id="fileInput" accept="image/*,.pdf,.txt,.doc,.docx,.csv" style="display:none" onchange="handleFileSelect(event)">
+                <button class="file-upload-btn" onclick="document.getElementById('fileInput').click()" title="Attach file or image">📎</button>
                 <input type="text" id="userInput" placeholder="Ask me anything..." autocomplete="off">
                 <button id="sendBtn" onclick="sendMessage()">Send</button>
             </div>
         </div>
     </div>
 
+                    
+                <div class="summarizer-tab" onclick="setSummTab(this,'url')">🌐 Article URL</div>
+            </div>
+            <textarea class="summarizer-input" id="summarizerInput" placeholder="Paste your text here to summarize..."></textarea>
+            <div class="summarizer-actions">
+                <button class="summarizer-cancel" onclick="closeSummarizerModal()">Cancel</button>
+                <button class="summarizer-submit" onclick="submitSummarizer()">✨ Summarize</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Summarizer Modal -->
+    <div class="summarizer-modal" id="summarizerModal" style="display:none" onclick="if(event.target===this)closeSummarizerModal()">
+        <div class="summarizer-box">
+            <h3>📝 Universal Summarizer</h3>
+            <p>Choose what you want to summarize</p>
+            <div class="summarizer-tabs">
+                <div class="summarizer-tab active" onclick="setSummTab(this,'text')">📄 Text</div>
+                
+                <div class="summarizer-tab" onclick="setSummTab(this,'url')">🌐 Article URL</div>
+            </div>
+            <textarea class="summarizer-input" id="summarizerInput" placeholder="Paste your text here..."></textarea>
+            <div class="summarizer-actions">
+                <button class="summarizer-cancel" onclick="closeSummarizerModal()">Cancel</button>
+                <button class="summarizer-submit" onclick="submitSummarizer()">✨ Summarize</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Summarizer Modal -->
+    <div id="summModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:999;align-items:center;justify-content:center;" onclick="if(event.target===this)closeSumm()">
+        <div class="summ-box">
+            <h3>📝 Universal Summarizer</h3>
+            <p>Choose what you want to summarize — text, article URL, or image</p>
+            <div class="summ-tabs">
+                <div class="summ-tab on" onclick="switchSummTab(this,'text')">📄 Text</div>
+                <div class="summ-tab" onclick="switchSummTab(this,'url')">🌐 Article URL</div>
+                <div class="summ-tab" onclick="switchSummTab(this,'image')">🖼️ Image</div>
+            </div>
+            <textarea class="summ-textarea" id="summInput" placeholder="Paste your text here to summarize..."></textarea>
+            <!-- Image upload area -->
+            <div id="summImageArea" style="display:none">
+                <div id="summImageDrop" onclick="document.getElementById('summImageFile').click()" style="border:2px dashed rgba(0,212,255,0.3);border-radius:10px;padding:30px;text-align:center;cursor:pointer;color:rgba(255,255,255,0.5);font-size:0.85em;margin-bottom:14px;transition:all 0.3s;background:rgba(0,212,255,0.03)">
+                    <div style="font-size:2.5em;margin-bottom:8px">🖼️</div>
+                    <div>Click to upload image or drag & drop</div>
+                    <div style="font-size:0.8em;margin-top:4px;color:rgba(255,255,255,0.3)">PNG, JPG, JPEG, GIF, WEBP</div>
+                </div>
+                <input type="file" id="summImageFile" accept="image/*" style="display:none" onchange="handleSummImage(event)">
+                <div id="summImagePreview" style="display:none;text-align:center;margin-bottom:14px">
+                    <img id="summImageThumb" style="max-height:150px;max-width:100%;border-radius:8px;border:1px solid rgba(0,212,255,0.3)" />
+                    <div id="summImageName" style="font-size:0.75em;color:rgba(255,255,255,0.4);margin-top:6px"></div>
+                    <button onclick="clearSummImage()" style="margin-top:6px;padding:4px 12px;background:rgba(255,80,80,0.15);border:1px solid rgba(255,80,80,0.3);border-radius:6px;color:#ff6060;font-size:0.75em;cursor:pointer">✕ Remove</button>
+                </div>
+                <input type="text" id="summImageQuestion" placeholder="Optional: Ask a specific question about this image..." style="width:100%;padding:10px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(0,212,255,0.3);border-radius:8px;color:#e0e0e0;font-size:0.85em;box-sizing:border-box;margin-bottom:14px">
+            </div>
+            <div class="summ-btns">
+                <button class="summ-cancel" onclick="closeSumm()">Cancel</button>
+                <button class="summ-go" onclick="doSummarize()">✨ Summarize</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Create floating particles
+
+
+        // ===== FIXED SESSION ID (one per browser tab) =====
+        const SESSION_ID = 'session-' + Math.random().toString(36).substr(2, 9);
+
+        // ===== PARTICLES =====
         function createParticles() {
             const particles = document.getElementById('particles');
             for (let i = 0; i < 50; i++) {
@@ -545,24 +1528,17 @@
             }
         }
 
-        // Create stars only in header
+        // ===== HEADER STARS =====
         function createHeaderStars() {
             const starsContainer = document.getElementById('headerStars');
-            const starCount = 150;
-            
-            for (let i = 0; i < starCount; i++) {
+            const sizes = ['small', 'small', 'small', 'small', 'medium', 'medium', 'large', 'bright'];
+            for (let i = 0; i < 150; i++) {
                 const star = document.createElement('div');
-                star.className = 'star';
-                
-                const sizes = ['small', 'small', 'small', 'small', 'medium', 'medium', 'large', 'bright'];
-                const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
-                star.classList.add(randomSize);
-                
+                star.className = 'star ' + sizes[Math.floor(Math.random() * sizes.length)];
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
                 star.style.animationDelay = Math.random() * 3 + 's';
                 star.style.animationDuration = (2 + Math.random() * 3) + 's';
-                
                 starsContainer.appendChild(star);
             }
         }
@@ -574,108 +1550,552 @@
         const userInput = document.getElementById('userInput');
         const sendBtn = document.getElementById('sendBtn');
         const typingIndicator = document.getElementById('typingIndicator');
-
-        // Symbol for AI responses (using your symbol.png)
+        const mainHeader = document.getElementById('mainHeader');
         const aiSymbol = "symbol.png";
 
-        // Add message to chat
+        // ===== ADD MESSAGE =====
+        // ===== FORMAT MESSAGE WITH IDE CODE BLOCKS =====
+        function formatMessage(text) {
+            // ===== MINDMAP SPECIAL RENDER =====
+            if (text.includes('%%MINDMAP%%')) {
+                const match = text.match(/%%MINDMAP%%([\s\S]*?)%%ENDMINDMAP%%/);
+                if (match) {
+                    try {
+                        const data = JSON.parse(match[1]);
+                        return renderMindmap(data);
+                    } catch(e) {}
+                }
+            }
+            // ===== ROADMAP SPECIAL RENDER =====
+            // New format: base64-wrapped JSON from backend
+            if (text.includes('ROADMAP_B64_START') && text.includes('ROADMAP_B64_END')) {
+                const m = text.match(/ROADMAP_B64_START([A-Za-z0-9+/=]+)ROADMAP_B64_END/);
+                if (m && m[1]) {
+                    try {
+                        const jsonStr = atob(m[1]);
+                        const data = JSON.parse(jsonStr);
+                        return renderRoadmap(data);
+                    } catch(e) {}
+                }
+            }
+            // Old/alternate format: raw JSON markers
+            if (text.includes('%%ROADMAP%%')) {
+                const m = text.match(/%%ROADMAP%%([\s\S]*?)%%ENDROADMAP%%/);
+                if (m) {
+                    try {
+                        const data = JSON.parse(m[1]);
+                        return renderRoadmap(data);
+                    } catch(e) {}
+                }
+            }
+
+            // Escape HTML in code blocks first, then render them as IDE blocks
+            let result = '';
+            let remaining = text;
+            const codeBlockRegex = /```(\w+)?\n?([\s\S]*?)```/g;
+            let lastIndex = 0;
+            let match;
+
+            while ((match = codeBlockRegex.exec(text)) !== null) {
+                // Add text before code block (formatted)
+                const before = text.slice(lastIndex, match.index);
+                result += formatInlineText(before);
+
+                const lang = (match[1] || 'code').toLowerCase();
+                const code = match[2].trim();
+                const escapedCode = code
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+
+                const prismLang = ['python','javascript','java','css','html','bash','shell'].includes(lang)
+                    ? lang : 'javascript';
+
+                const blockId = 'code-' + Math.random().toString(36).substr(2, 9);
+
+                result += `
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <div class="code-block-header-left">
+                            <div class="code-dots">
+                                <div class="code-dot red"></div>
+                                <div class="code-dot yellow"></div>
+                                <div class="code-dot green"></div>
+                            </div>
+                            <span class="code-lang-badge">💻 ${lang}</span>
+                        </div>
+                        <button class="code-copy-btn" onclick="copyCode('${blockId}', this)">
+                            📋 Copy Code
+                        </button>
+                    </div>
+                    <pre id="${blockId}"><code class="language-${prismLang}">${escapedCode}</code></pre>
+                </div>`;
+
+                lastIndex = match.index + match[0].length;
+            }
+
+            // Add remaining text
+            result += formatInlineText(text.slice(lastIndex));
+
+            // Re-run Prism highlighting after DOM update
+            setTimeout(() => {
+                if (window.Prism) Prism.highlightAll();
+            }, 50);
+
+            return result;
+        }
+
+        function formatInlineText(text) {
+            return text
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/`([^`]+)`/g, '<code>$1</code>')
+                .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" style="color:#00d4ff;text-decoration:none;border-bottom:1px solid rgba(0,212,255,0.4);padding-bottom:1px;">$1 ↗</a>')
+                .replace(/^## (.+)$/gm, '<div style="color:#00d4ff;font-size:1.05em;font-weight:700;margin:10px 0 4px;">$1</div>')
+                .replace(/^# (.+)$/gm, '<div style="color:#00d4ff;font-size:1.15em;font-weight:700;margin:12px 0 5px;">$1</div>')
+                .replace(/(\d+)\. (.+)/g, '<div style="margin-left:18px;margin-bottom:3px;">$1. $2</div>')
+                .replace(/[•\-] (.+)/g, '<div style="margin-left:18px;margin-bottom:2px;">• $1</div>')
+                .replace(/\n/g, '<br>');
+        }
+
+        function copyCode(blockId, btn) {
+            const codeEl = document.getElementById(blockId);
+            if (!codeEl) return;
+            const text = codeEl.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '✅ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = '📋 Copy Code';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                // Fallback
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                btn.innerHTML = '✅ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => { btn.innerHTML = '📋 Copy Code'; btn.classList.remove('copied'); }, 2000);
+            });
+        }
+
         function addMessage(content, isUser) {
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${isUser ? 'user' : 'ai'}`;
-            
+
             const avatar = document.createElement('div');
             avatar.className = 'message-avatar';
-            
+
             if (isUser) {
                 avatar.innerHTML = '👤';
                 avatar.style.fontSize = '24px';
             } else {
                 avatar.innerHTML = `<img src="${aiSymbol}" alt="AI">`;
             }
-            
+
             const contentDiv = document.createElement('div');
             contentDiv.className = 'message-content';
-            contentDiv.textContent = content;
-            
+
+            let formattedContent = formatMessage(content);
+
+            contentDiv.innerHTML = formattedContent;
             messageDiv.appendChild(avatar);
             messageDiv.appendChild(contentDiv);
             messagesDiv.appendChild(messageDiv);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
-            // Remove welcome message if exists
+            // Remove welcome message on first chat
             const welcome = messagesDiv.querySelector('.welcome-message');
             if (welcome) {
                 welcome.remove();
-                // Enable scrolling when chat starts
                 messagesDiv.classList.add('has-messages');
+                // Collapse the header
+                mainHeader.classList.add('collapsed');
             }
+
+            // ===== ADD TO CHAT HISTORY =====
+            const historyList = document.getElementById('chatHistoryList');
+            const emptyMsg = historyList.querySelector('.history-empty');
+            if (emptyMsg) emptyMsg.remove();
+
+            const historyItem = document.createElement('div');
+            historyItem.className = `history-item ${isUser ? 'user-msg' : 'ai-msg'}`;
+            const label = isUser ? '👤 ' : '🧠 ';
+            const short = content.replace(/<[^>]+>/g, ''); // strip html
+            historyItem.textContent = label + short.substring(0, 55) + (short.length > 55 ? '...' : '');
+            historyList.appendChild(historyItem);
+
+            // Auto scroll history to bottom
+            historyList.scrollTop = historyList.scrollHeight;
         }
 
-        // Simulate AI response (replace with actual backend call)
-        async function getAIResponse(query) {
-            // Call your Flask backend
-            try {
-                const response = await fetch('http://localhost:5000/api/chat', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        message: query,
-                        session_id: 'user_session_' + Date.now()
-                    })
-                });
-
-                const data = await response.json();
-                
-                if (data.success) {
-                    return data.response;
-                } else {
-                    return "⚠️ Error: " + (data.error || "Something went wrong");
-                }
-            } catch (error) {
-                return "⚠️ Connection Error: Make sure your Flask server is running on http://localhost:5000\n\nStart the server with: python app.py";
-            }
-        }
-
-        // Send message
+        // ===== SEND MESSAGE =====
         async function sendMessage() {
             const message = userInput.value.trim();
-            if (!message) return;
+            if (!message && !selectedFile) return;
 
-            // Add user message
-            addMessage(message, true);
+            let displayMessage = message;
+            if (selectedFile) {
+                const fileLabel = selectedFile.type.startsWith('image/') ? '🖼️' : '📎';
+                displayMessage = (message ? message + '\n' : '') + fileLabel + ' ' + selectedFile.name;
+            }
+
+            addMessage(displayMessage, true);
             userInput.value = '';
+            removeFile();
             sendBtn.disabled = true;
-
-            // Show typing indicator
             typingIndicator.classList.add('active');
 
-            // Get AI response
-            const response = await getAIResponse(message);
-            
-            // Hide typing indicator
+            const response = await getAIResponse(message || 'I have attached a file: ' + selectedFile?.name);
+
             typingIndicator.classList.remove('active');
-            
-            // Add AI message
             addMessage(response, false);
             sendBtn.disabled = false;
             userInput.focus();
         }
 
-        // Quick query
+        // ===== QUICK QUERY =====
         function quickQuery(query) {
             userInput.value = query;
             sendMessage();
         }
 
-        // Enter key to send
+        function prefillInput(text) {
+            userInput.value = text;
+            userInput.focus();
+            // Place cursor at end
+            userInput.setSelectionRange(text.length, text.length);
+        }
+
+        // ===== ENTER KEY =====
         userInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage();
         });
 
-        // Focus input on load
         userInput.focus();
+
+        // ===== SIDEBAR =====
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('sidebarOverlay').classList.toggle('active');
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('sidebarOverlay').classList.remove('active');
+        }
+
+        function sidebarAction(promptText, autoSend = false) {
+            closeSidebar();
+            userInput.value = promptText;
+            userInput.focus();
+            if (autoSend) {
+                setTimeout(() => sendMessage(), 150);
+            }
+        }
+
+        // ===== RESET CHAT =====
+        function resetChat() {
+            // Clear messages
+            messagesDiv.innerHTML = '';
+
+            // Restore welcome screen
+            messagesDiv.innerHTML = `
+                <div class="welcome-message">
+                    <img class="welcome-bg-logo" src="symbol2.png" alt="">
+                    <h2>Welcome to Knowledge Engine</h2>
+                    <p>💡 Ask me anything, and I'll search, learn, and remember for you</p>
+                </div>`;
+
+            // Expand header back
+            mainHeader.classList.remove('collapsed');
+            messagesDiv.classList.remove('has-messages');
+
+            // Clear chat history in sidebar
+            historyList.innerHTML = '<div class="history-empty">No history yet</div>';
+
+            userInput.focus();
+        }
+
+        // ===== SIDEBAR SCROLL BUTTONS =====
+        function updateScrollButtons() {
+            const el = document.getElementById('sidebarFeatures');
+            const downBtn = document.getElementById('scrollDownBtn');
+            const upBtn = document.getElementById('scrollUpBtn');
+            if (!el) return;
+            const canScrollDown = el.scrollTop + el.clientHeight < el.scrollHeight - 5;
+            const canScrollUp = el.scrollTop > 5;
+            downBtn.classList.toggle('visible', canScrollDown);
+            upBtn.classList.toggle('visible', canScrollUp);
+        }
+
+        function scrollFeatures(dir) {
+            const el = document.getElementById('sidebarFeatures');
+            el.scrollBy({ top: dir === 'down' ? 150 : -150, behavior: 'smooth' });
+            setTimeout(updateScrollButtons, 300);
+        }
+
+        document.getElementById('sidebarFeatures').addEventListener('scroll', updateScrollButtons);
+        // Check on sidebar open
+        document.getElementById('sidebar').addEventListener('transitionend', updateScrollButtons);
+        window.addEventListener('resize', updateScrollButtons);
+        setTimeout(updateScrollButtons, 500);
+
+        // ===== FILE UPLOAD HANDLING =====
+        let selectedFile = null;
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            selectedFile = file;
+
+            const preview = document.getElementById('filePreview');
+            const previewName = document.getElementById('filePreviewName');
+            const previewIcon = document.getElementById('filePreviewIcon');
+
+            // Set icon based on file type
+            if (file.type.startsWith('image/')) previewIcon.textContent = '🖼️';
+            else if (file.type === 'application/pdf') previewIcon.textContent = '📄';
+            else previewIcon.textContent = '📎';
+
+            previewName.textContent = file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)';
+            preview.classList.add('visible');
+        }
+
+        function removeFile() {
+            selectedFile = null;
+            document.getElementById('fileInput').value = '';
+            document.getElementById('filePreview').classList.remove('visible');
+        }
+
+        // ===== GET AI RESPONSE =====
+        async function getAIResponse(message) {
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: message,
+                        session_id: SESSION_ID
+                    })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    return data.response;
+                } else {
+                    return 'Error: ' + (data.error || 'Something went wrong');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                return 'Failed to connect to AI. Please try again.';
+            }
+        }
+    
+        // ===== MINDMAP RENDERER =====
+        function renderMindmap(data) {
+            const id = 'mm-' + Math.random().toString(36).substr(2,8);
+            let branchesHTML = '';
+            Object.entries(data.branches).forEach(([name, branch], idx) => {
+                const items = branch.items || branch;
+                const detail = branch.detail || '';
+                const safeDetail = detail.replace(/'/g, "\'").replace(/\n/g, '\\n');
+                branchesHTML += `
+                <div class="mindmap-branch" id="${id}-branch-${idx}">
+                    <div class="mindmap-branch-title" onclick="toggleMindmapBranch('${id}-branch-${idx}')">🔹 ${name}</div>
+                    <div class="mindmap-branch-items">
+                        ${items.map(i => `<div class="mindmap-branch-item" onclick="showMindmapDetail('${id}-detail', '${name}', '${safeDetail}')">${i} <span style="color:rgba(0,212,255,0.5);font-size:0.8em">›</span></div>`).join('')}
+                    </div>
+                    <div class="mindmap-detail-inline" id="${id}-detail-${idx}" style="display:none"></div>
+                </div>`;
+            });
+            // Links HTML
+            let linksHTML = '';
+            if (data.links && data.links.length) {
+                linksHTML = `<div class="resource-links">
+                    <div class="resource-links-title">🔗 RESOURCES & LINKS</div>
+                    ${data.links.map(l => `<a class="resource-link" href="${l.url}" target="_blank">${l.label}</a>`).join('')}
+                </div>`;
+            }
+            // Wiki summary
+            let wikiHTML = '';
+            if (data.wiki_summary) {
+                wikiHTML = `<div class="wiki-summary">📖 ${data.wiki_summary}</div>`;
+            }
+
+            return `
+            <div class="mindmap-wrapper" id="${id}">
+                <div class="mindmap-header">🧠 MIND MAP &nbsp;|&nbsp; Click branch title to expand • Click item for details</div>
+                ${wikiHTML}
+                <div class="mindmap-body">
+                    <div class="mindmap-center">${data.topic}</div>
+                    <div class="mindmap-connector-main"></div>
+                    <div class="mindmap-branches">${branchesHTML}</div>
+                    <div class="mindmap-detail-box" id="${id}-detail" style="display:none"></div>
+                </div>
+                ${linksHTML}
+            </div>`;
+        }
+
+        function toggleMindmapBranch(branchId) {
+            const branch = document.getElementById(branchId);
+            if (branch) branch.classList.toggle('expanded');
+        }
+
+        function showMindmapDetail(detailBoxId, title, detail) {
+            const box = document.getElementById(detailBoxId);
+            if (!box) return;
+            const safe = (detail || '').toString()
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/\n/g, '<br>');
+            box.innerHTML = `<div class="mindmap-detail-title">📌 ${title}</div><div class="mindmap-detail-text">${safe}</div>`;
+            box.style.display = 'block';
+            box.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+        }
+
+        // ===== ROADMAP RENDERER =====
+        function renderRoadmap(data) {
+            const id = 'rm-' + Math.random().toString(36).substr(2,8);
+            const phases = Array.isArray(data.phases) ? data.phases : [];
+            let phasesHTML = phases.map((phase, idx) => {
+                const steps = Array.isArray(phase.steps) ? phase.steps : [];
+                return `
+                <div class="roadmap-phase" style="--phase-color: ${phase.color}">
+                    <div class="roadmap-phase-left">
+                        <!-- Use simple phase number instead of emoji to avoid weird symbols on some systems -->
+                        <div class="roadmap-icon">P${idx + 1}</div>
+                    </div>
+                    <div class="roadmap-phase-content" onclick="toggleRoadmapDetail('${id}-phase-${idx}')" style="cursor:pointer">
+                        <div class="roadmap-phase-title">PHASE ${idx + 1}: ${phase.title || ''} <span style="float:right;font-size:0.8em;opacity:0.6">▼ Click for guide</span></div>
+                        <div class="roadmap-phase-duration">${phase.duration || ''}</div>
+                        <div class="roadmap-steps">
+                            ${steps.map(s => `<div class="roadmap-step">${s}</div>`).join('')}
+                        </div>
+                        <div class="roadmap-phase-detail" id="${id}-phase-${idx}" style="display:none">
+                            ${(phase.detail||'').replace(/\n/g,'<br>')}
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+
+            // Links HTML
+            let linksHTML = '';
+            if (data.links && data.links.length) {
+                linksHTML = `<div class="resource-links">
+                    <div class="resource-links-title">🔗 RESOURCES & LINKS</div>
+                    ${data.links.map(l => `<a class="resource-link" href="${l.url}" target="_blank">${l.label}</a>`).join('')}
+                </div>`;
+            }
+            // Wiki summary
+            let wikiHTML = '';
+            if (data.wiki_summary) {
+                wikiHTML = `<div class="wiki-summary" style="margin:12px 16px 0 16px; border-left-color: rgba(124,77,255,0.5)">📖 ${data.wiki_summary}</div>`;
+            }
+
+            return `
+            <div class="roadmap-wrapper" id="${id}">
+                <div class="roadmap-header">🎯 LEARNING ROADMAP: ${(data.skill || '').toString().toUpperCase()} &nbsp;|&nbsp; Click any phase for detailed guide</div>
+                ${wikiHTML}
+                <div class="roadmap-body">${phasesHTML}</div>
+                ${linksHTML}
+            </div>`;
+        }
+
+        function toggleRoadmapDetail(detailId) {
+            const el = document.getElementById(detailId);
+            if (!el) return;
+            const isOpen = el.style.display !== 'none';
+            el.style.display = isOpen ? 'none' : 'block';
+            el.closest('.roadmap-phase-content').querySelector('.roadmap-phase-title span').textContent = isOpen ? '▼ Click for guide' : '▲ Hide guide';
+        }
+
+    
+
+
+        // ===== SUMMARIZER MODAL =====
+        var summType = 'text';
+        function openSummarizer() {
+            closeSidebar();
+            var m = document.getElementById('summModal');
+            m.style.display = 'flex';
+            document.getElementById('summInput').value = '';
+            document.getElementById('summInput').placeholder = 'Paste your text here to summarize...';
+            setTimeout(function(){ document.getElementById('summInput').focus(); }, 200);
+        }
+        function closeSumm() {
+            document.getElementById('summModal').style.display = 'none';
+        }
+        var summImageData = null;
+
+        function switchSummTab(el, type) {
+            summType = type;
+            var tabs = document.querySelectorAll('.summ-tab');
+            for(var i=0; i<tabs.length; i++) tabs[i].classList.remove('on');
+            el.classList.add('on');
+
+            var textArea = document.getElementById('summInput');
+            var imageArea = document.getElementById('summImageArea');
+
+            if (type === 'image') {
+                textArea.style.display = 'none';
+                imageArea.style.display = 'block';
+            } else {
+                textArea.style.display = 'block';
+                imageArea.style.display = 'none';
+                var ph = {
+                    text: 'Paste your text here to summarize...',
+                    url: 'Paste article/webpage URL...\ne.g. https://www.example.com/article'
+                };
+                textArea.placeholder = ph[type] || ph.text;
+                textArea.value = '';
+            }
+        }
+
+        function handleSummImage(event) {
+            var file = event.target.files[0];
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                summImageData = e.target.result; // base64
+                document.getElementById('summImageThumb').src = e.target.result;
+                document.getElementById('summImageName').textContent = file.name + ' (' + (file.size/1024).toFixed(1) + ' KB)';
+                document.getElementById('summImagePreview').style.display = 'block';
+                document.getElementById('summImageDrop').style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearSummImage() {
+            summImageData = null;
+            document.getElementById('summImageFile').value = '';
+            document.getElementById('summImagePreview').style.display = 'none';
+            document.getElementById('summImageDrop').style.display = 'block';
+        }
+
+        function doSummarize() {
+            if (summType === 'image') {
+                if (!summImageData) { alert('Please upload an image first!'); return; }
+                var question = document.getElementById('summImageQuestion').value.trim();
+                closeSumm();
+                // Send image as base64 with question
+                var msg = question
+                    ? 'Analyze this image and answer: ' + question + ' [IMAGE_DATA:' + summImageData + ']'
+                    : 'Analyze and summarize the content of this image [IMAGE_DATA:' + summImageData + ']';
+                userInput.value = msg;
+                sendMessage();
+            } else {
+                var val = document.getElementById('summInput').value.trim();
+                if (!val) { alert('Please enter some content first!'); return; }
+                closeSumm();
+                userInput.value = 'Summarize the following: ' + val;
+                sendMessage();
+            }
+        }
+
     </script>
 </body>
 </html>

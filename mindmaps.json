@@ -1,9 +1,154 @@
 {
   "maps": [
     {
-      "topic": "Machine Learning",
-      "created": "2025-11-01T07:51:07.798076",
-      "structure": "\ud83e\udde0 **MIND MAP: MACHINE LEARNING**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Machine Learnin   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] 1. Introduction to Machine Learning\n    [2] - Definition and types\n    [3] - Applications\n    [4] 2. Supervised Learning\n    [5] - Regression\n    [6] - Classification\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 27\n"
+      "topic": "AI-powered study buddy app",
+      "created": "2026-03-13T22:13:43.022706",
+      "structure": "\ud83e\udde0 **MIND MAP: AI-POWERED STUDY BUDDY APP**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   AI-powered stud   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] expand idea, solve step-by-step, create learning roadmap\n         \u2514\u2500\u25ba expand idea, solve\n         \u2514\u2500\u25ba step-by-step, create learning\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "food delivery",
+      "created": "2026-03-13T22:26:00.347882",
+      "structure": "\ud83e\udde0 **MIND MAP: FOOD DELIVERY**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502    food delivery    \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] food delivery app idea expansion framework\n         \u2514\u2500\u25ba food delivery app\n         \u2514\u2500\u25ba idea expansion framework\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Learning Python",
+      "created": "2026-03-13T22:28:11.946694",
+      "structure": "\ud83e\udde0 **MIND MAP: LEARNING PYTHON**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Learning Python   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Learn Python basics, practice coding, create projects, join communities\n         \u2514\u2500\u25ba Learn Python basics,\n         \u2514\u2500\u25ba practice coding, create\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-13T22:44:29.114850",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502       Python        \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Python is a high-level, interpreted programming language. It is widely used for \n         \u2514\u2500\u25ba Python is a\n         \u2514\u2500\u25ba high-level, interpreted programming\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-13T22:44:29.750069",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502       Python        \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Python is a high-level, interpreted programming language. It is widely used for \n         \u2514\u2500\u25ba Python is a\n         \u2514\u2500\u25ba high-level, interpreted programming\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-13T22:44:30.776499",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502       Python        \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Python is a high-level, interpreted programming language. It is widely used for \n         \u2514\u2500\u25ba Python is a\n         \u2514\u2500\u25ba high-level, interpreted programming\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-13T22:50:32.610051",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502       Python        \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] A high-level, interpreted programming language with extensive libraries and a va\n         \u2514\u2500\u25ba A high-level, interpreted\n         \u2514\u2500\u25ba programming language with\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python Libraries",
+      "created": "2026-03-13T22:50:33.175871",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON LIBRARIES**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Python Librarie   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Extensive libraries, large community, and easy-to-learn syntax make Python a pop\n         \u2514\u2500\u25ba Extensive libraries, large\n         \u2514\u2500\u25ba community, and easy-to-learn\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python Applications",
+      "created": "2026-03-13T22:50:33.787465",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON APPLICATIONS**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Python Applicat   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Popular applications of Python include data science, machine learning, web devel\n         \u2514\u2500\u25ba Popular applications of\n         \u2514\u2500\u25ba Python include data\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python Fundamentals",
+      "created": "2026-03-13T22:50:34.707602",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON FUNDAMENTALS**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Python Fundamen   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Key areas of study for Python include data structures, file input/output, object\n         \u2514\u2500\u25ba Key areas of\n         \u2514\u2500\u25ba study for Python\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Getting Started with Python",
+      "created": "2026-03-13T22:50:35.630494",
+      "structure": "\ud83e\udde0 **MIND MAP: GETTING STARTED WITH PYTHON**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Getting Started   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] To get started with Python, install Python from the official website and use a c\n         \u2514\u2500\u25ba To get started\n         \u2514\u2500\u25ba with Python, install\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python Automation",
+      "created": "2026-03-13T22:50:41.164725",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON AUTOMATION**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Python Automati   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] To automate tasks, use Python's built-in libraries such as os, sys, and subproce\n         \u2514\u2500\u25ba To automate tasks,\n         \u2514\u2500\u25ba use Python's built-in\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python Data Science",
+      "created": "2026-03-13T22:51:01.981434",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON DATA SCIENCE**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Python Data Sci   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] For data science and machine learning, use popular libraries such as NumPy, pand\n         \u2514\u2500\u25ba For data science\n         \u2514\u2500\u25ba and machine learning,\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python Web Development",
+      "created": "2026-03-13T22:51:25.932696",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON WEB DEVELOPMENT**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Python Web Deve   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] For web development, use popular frameworks such as Django or Flask, and conside\n         \u2514\u2500\u25ba For web development,\n         \u2514\u2500\u25ba use popular frameworks\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Getting Started with Python",
+      "created": "2026-03-13T22:51:50.899902",
+      "structure": "\ud83e\udde0 **MIND MAP: GETTING STARTED WITH PYTHON**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Getting Started   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] To get started with Python, install Python from the official website and use a c\n         \u2514\u2500\u25ba To get started\n         \u2514\u2500\u25ba with Python, install\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python Resources",
+      "created": "2026-03-13T22:52:17.019343",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON RESOURCES**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Python Resource   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Some popular online resources for learning Python include Codecademy, Coursera, \n         \u2514\u2500\u25ba Some popular online\n         \u2514\u2500\u25ba resources for learning\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "Python Overview",
+      "created": "2026-03-13T22:53:14.993576",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON OVERVIEW**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502   Python Overview   \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Python is a versatile and powerful language that can be applied to a wide range \n         \u2514\u2500\u25ba Python is a\n         \u2514\u2500\u25ba versatile and powerful\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "python",
+      "created": "2026-03-13T22:55:25.844263",
+      "structure": "\ud83e\udde0 **MIND MAP: PYTHON**\n\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                    \u2502       python        \u2502\n                    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                            \u2502\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    [1] Python is a high-level, interpreted programming language. It is often used for w\n         \u2514\u2500\u25ba Python is a\n         \u2514\u2500\u25ba high-level, interpreted programming\n\n---\n\ud83d\udca1 **Pro Tip:** Use this structure to visualize relationships!\n\ud83d\udcca Total branches: 1"
+    },
+    {
+      "topic": "python",
+      "created": "2026-03-14T10:24:29.710389"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-14T10:45:20.116929"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-14T12:11:57.354796"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-14T12:50:54.672071"
+    },
+    {
+      "topic": "Ai",
+      "created": "2026-03-14T12:52:31.235299"
+    },
+    {
+      "topic": "Cooking",
+      "created": "2026-03-14T13:16:04.423733"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-14T16:26:41.386646"
+    },
+    {
+      "topic": "Ai",
+      "created": "2026-03-14T18:24:37.561465"
+    },
+    {
+      "topic": "Python",
+      "created": "2026-03-14T18:51:28.545396"
+    },
+    {
+      "topic": "Cooking",
+      "created": "2026-03-14T18:52:37.225287"
+    },
+    {
+      "topic": "Cooking",
+      "created": "2026-03-14T18:57:59.051165"
+    },
+    {
+      "topic": "Osint",
+      "created": "2026-03-14T18:59:41.075500"
+    },
+    {
+      "topic": "Ai",
+      "created": "2026-03-14T19:25:13.369396"
+    },
+    {
+      "topic": "Ai",
+      "created": "2026-03-14T23:17:50.884700"
+    },
+    {
+      "topic": "Ai",
+      "created": "2026-03-17T00:00:30.384202"
     }
   ]
 }
