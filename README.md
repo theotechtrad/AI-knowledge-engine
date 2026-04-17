@@ -4,7 +4,7 @@ An advanced AI-powered knowledge assistant built with LangChain/LangGraph and Fl
 
 ## Live Demo
 
-🔗 [Knowledge Engine AI](https://aiengine777.pythonanywhere.com/)
+🔗 [Knowledge Engine AI](https://ai-knowledge-engine-1.onrender.com)
 
 ## Features
 
