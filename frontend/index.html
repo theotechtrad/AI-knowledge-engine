@@ -11,12 +11,20 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
             color: #e0e0e0;
-            height: 100vh;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            height: 100dvh;
             overflow: hidden;
             position: relative;
         }
@@ -50,7 +58,10 @@
         .container {
             position: relative;
             z-index: 1;
-            height: 100vh;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            height: 100%;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -223,6 +234,7 @@
             padding: 0;
             overflow: hidden;
             min-height: 0;
+            min-width: 0;
         }
 
         .messages {
@@ -233,6 +245,7 @@
             flex-direction: column;
             background: transparent;
             min-height: 0;
+            min-width: 0;
         }
 
         .messages.has-messages {
@@ -252,6 +265,7 @@
             display: flex;
             gap: 15px;
             animation: slideIn 0.3s ease-out;
+            min-width: 0;
         }
 
         @keyframes slideIn {
@@ -293,6 +307,8 @@
             padding: 15px 20px;
             border-radius: 15px;
             line-height: 1.6;
+            min-width: 0;
+            overflow-wrap: anywhere;
         }
 
         .message.user .message-content {
@@ -342,6 +358,9 @@
         /* ===== INPUT AREA ===== */
         .input-area {
             padding: 20px;
+            padding-left: max(20px, env(safe-area-inset-left));
+            padding-right: max(20px, env(safe-area-inset-right));
+            padding-bottom: max(20px, env(safe-area-inset-bottom));
             background: rgba(0,0,0,0.3);
             border-top: 1px solid rgba(0,200,255,0.3);
             backdrop-filter: blur(10px);
@@ -352,6 +371,8 @@
             gap: 10px;
             max-width: 1200px;
             margin: 0 auto;
+            min-width: 0;
+            align-items: center;
         }
 
         #userInput {
@@ -364,6 +385,7 @@
             font-size: 1em;
             outline: none;
             transition: all 0.3s;
+            min-width: 0;
         }
 
         #userInput:focus {
@@ -382,6 +404,8 @@
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(0,200,255,0.3);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         #sendBtn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,200,255,0.5); }
@@ -485,6 +509,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 8px;
             background: linear-gradient(90deg, #0d1b2a, #1a2a3a);
             padding: 8px 14px;
             border-bottom: 1px solid rgba(0,212,255,0.2);
@@ -494,6 +520,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            min-width: 0;
         }
 
         .code-dots {
@@ -519,6 +546,7 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             border: 1px solid rgba(0,212,255,0.25);
+            white-space: nowrap;
         }
 
         .code-copy-btn {
@@ -534,6 +562,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            white-space: nowrap;
         }
 
         .code-copy-btn:hover {
@@ -868,6 +897,13 @@
             h1 { font-size: 2.2em; }
             .logo-symbol { width: 160px; height: 160px; }
             .message-content { max-width: 72%; }
+            .chat-container { padding: 14px; }
+            .messages.has-messages { padding: 16px; gap: 16px; }
+            .input-area { padding: 16px 14px; }
+            .quick-actions { gap: 8px; }
+            .mindmap-branches { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 720px; }
+            .roadmap-phase-content { min-width: 0; }
+            .roadmap-phase-title span { float: none !important; display: inline-block; margin-left: 6px; }
         }
 
         /* Tablet landscape: 768px-1023px */
@@ -877,6 +913,7 @@
             .tagline { font-size: 0.8em; }
             .chat-container { padding: 12px; }
             .messages { padding: 12px; gap: 14px; }
+            .messages.has-messages { padding: 12px; gap: 14px; }
             .message-content { max-width: 78%; padding: 12px 15px; font-size: 0.95em; }
             .message-avatar { width: 36px; height: 36px; }
             .quick-actions { gap: 6px; }
@@ -887,6 +924,9 @@
             .input-area { padding: 14px 12px; }
             .sidebar { width: 280px; left: -300px; }
             .welcome-message h2 { font-size: 1.8em; }
+            .mindmap-branches { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 100%; }
+            .mindmap-center { max-width: 100%; text-align: center; }
+            .roadmap-phase { gap: 12px; }
         }
 
         /* Mobile: 480px-767px */
@@ -898,6 +938,7 @@
             .hamburger-btn { top: 12px; left: 8px; width: 36px; height: 36px; font-size: 1.1em; }
             .chat-container { padding: 8px; }
             .messages { padding: 8px; gap: 10px; }
+            .messages.has-messages { padding: 8px; gap: 10px; }
             .message-content { max-width: 85%; padding: 10px 13px; font-size: 0.9em; }
             .message-avatar { width: 30px; height: 30px; }
             .message { gap: 8px; }
@@ -913,7 +954,13 @@
             .sidebar-item { padding: 13px 16px; font-size: 0.9em; }
             .welcome-message h2 { font-size: 1.4em; margin-bottom: 10px; }
             .welcome-message p { font-size: 0.88em; }
+            .welcome-message { overflow-y: auto; }
             .header.collapsed h1 { font-size: 1em; }
+            .mindmap-branches { grid-template-columns: 1fr; }
+            .roadmap-phase { gap: 10px; }
+            .roadmap-icon { width: 36px; height: 36px; font-size: 1em; }
+            .roadmap-phase:not(:last-child)::after { left: 17px; top: 38px; }
+            .roadmap-phase-content { padding: 10px 12px; }
         }
 
         /* Very small phones: below 360px */
@@ -923,7 +970,8 @@
             .quick-btn { font-size: 0.72em; padding: 4px 7px; }
             #sendBtn { padding: 9px 11px; font-size: 0.8em; }
             .message-content { max-width: 90%; font-size: 0.85em; }
-            .sidebar { width: 92vw; }
+            .messages.has-messages { padding: 6px; gap: 8px; }
+            .sidebar { width: 92vw; left: -95vw; }
         }
     
 
