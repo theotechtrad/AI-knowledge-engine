@@ -1,0 +1,31 @@
+# Virtual environments
+.venv/
+.venv-1/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+ai_agent.egg-info/
+
+# Git
+.git/
+.gitignore
+
+# Local env file (set these in Railway/Fly.io dashboard instead)
+.env
+
+# ChromaDB local data (will be recreated in container)
+chroma_db/
+
+# Dev/test files
+test.py
+uv.lock
+
+# OS
+.DS_Store
+Thumbs.db
