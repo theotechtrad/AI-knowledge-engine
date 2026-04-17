@@ -807,4 +807,5 @@ if __name__ == '__main__':
     print(f"{len(GROQ_KEYS)} API key(s) | RAG enabled | Vector DB ready")
     print("Server: http://localhost:5500")
     print("="*60)
-    app.run(debug=True, host='0.0.0.0', port=5500)
+    port = int(os.environ.get("PORT", 5500))
+    app.run(debug=False, host='0.0.0.0', port=port)

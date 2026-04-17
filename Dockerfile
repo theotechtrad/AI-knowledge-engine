@@ -15,10 +15,11 @@ COPY . .
 
 RUN mkdir -p /data/chroma_db && rm -rf /app/chroma_db && ln -s /data/chroma_db /app/chroma_db
 
-EXPOSE 5500
+EXPOSE 10000
 
 ENV PYTHONUNBUFFERED=1
 ENV FLASK_ENV=production
 ENV CHROMA_DB_PATH=/data/chroma_db
+ENV PORT=10000
 
 CMD ["python", "main.py"]
